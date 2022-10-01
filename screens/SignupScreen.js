@@ -24,9 +24,7 @@ function SignupScreen({ navigation }) {
       <Image source={textLogo} style={styles.textLogo} />
       <CommonInput
         value={text}
-        onChangeText={(text) => {
-          setText(text);
-        }}
+        onChangeText={setText}
         placeholder="Phone number, email or username"
       />
       <View
@@ -38,9 +36,7 @@ function SignupScreen({ navigation }) {
           value={password}
           placeholder="Password"
           securetextentry={secureText}
-          onChangeText={(text) => {
-            setPassword(text);
-          }}
+          onChangeText={setPassword}
         />
         <TouchableWithoutFeedback
           onPress={() => {

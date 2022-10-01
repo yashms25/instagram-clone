@@ -21,7 +21,6 @@ function CommonInput({
         secureTextEntry={securetextentry}
         value={value}
         onChangeText={onChangeText}
-        showSoftInputOnFocus
       />
     </View>
   );

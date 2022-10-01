@@ -4,13 +4,23 @@ import {
   View,
   Dimensions,
   TouchableHighlight,
+  ActivityIndicator,
 } from "react-native";
 import colors from "../colors";
 const { screen_width, screen_height } = Dimensions.get("window");
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { h, w } from "../config/SizeConfig";
+import { Colors } from "react-native/Libraries/NewAppScreen";
 
-function BlueButton({ title, onPress, icon, disabled, style, color }) {
+function BlueButton({
+  title,
+  onPress,
+  icon,
+  disabled,
+  style,
+  color,
+  activity = false,
+}) {
   return (
     <TouchableHighlight
       style={[
@@ -39,7 +49,14 @@ function BlueButton({ title, onPress, icon, disabled, style, color }) {
             color={color}
           />
         )}
-        <Text style={styles.text}>{title}</Text>
+        {!activity && <Text style={styles.text}>{title}</Text>}
+        {activity && (
+          <ActivityIndicator
+            size={"large"}
+            color={colors.white}
+            style={{ zIndex: 10, position: "absolute" }}
+          />
+        )}
       </View>
     </TouchableHighlight>
   );
@@ -48,7 +65,7 @@ function BlueButton({ title, onPress, icon, disabled, style, color }) {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: colors.primaryBlue,
-
+    position: "relative",
     width: screen_width,
     padding: 10,
     marginHorizontal: "5%",

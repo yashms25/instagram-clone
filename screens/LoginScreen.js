@@ -46,7 +46,13 @@ function LoginScreen({ navigation }) {
       <TouchableWithoutFeedback
         onPress={() => navigation.navigate("SignupScreen")}
       >
-        <Text style={{ color: colors.grey, alignSelf: "center", fontSize: 12 }}>
+        <Text
+          style={{
+            color: colors.grey,
+            alignSelf: "center",
+            fontSize: 12,
+          }}
+        >
           Already have an account?{" "}
           <Text style={{ color: colors.darkBlue, fontWeight: "bold" }}>
             Log in.

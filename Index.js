@@ -9,6 +9,7 @@ import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import LoginScreen from "./screens/LoginScreen";
 import SignupManualScreen from "./screens/SignupManualScreen";
+import OTPScreen from "./screens/OTPScreen";
 const Stack = createStackNavigator();
 
 const Homestack = () => {
@@ -21,6 +22,7 @@ const Homestack = () => {
       <Stack.Screen name="SignupScreen" component={SignupScreen} />
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="SignupManualScreen" component={SignupManualScreen} />
+      <Stack.Screen name="OTPScreen" component={OTPScreen} />
     </Stack.Navigator>
   );
 };

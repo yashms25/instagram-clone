@@ -4,7 +4,7 @@ const colors = {
   black: "#262626",
   grey: "grey",
   lighGrey: "#D8DCDF",
-  textInputGrey: "#f5f5f5",
+  textInputGrey: "#f9f9f9",
   lightBlue: "#00ABF5",
   darkBlue: "#00376B",
 };

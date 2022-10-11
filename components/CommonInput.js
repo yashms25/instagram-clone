@@ -10,6 +10,7 @@ function CommonInput({
   style,
   value = "",
   onChangeText,
+  onBlur,
 }) {
   return (
     <View>
@@ -21,6 +22,7 @@ function CommonInput({
         secureTextEntry={securetextentry}
         value={value}
         onChangeText={onChangeText}
+        onBlur={onBlur ? onBlur : () => {}}
       />
     </View>
   );

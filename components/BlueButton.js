@@ -16,7 +16,7 @@ function BlueButton({
   title,
   onPress,
   icon,
-  disabled,
+  disabled = false,
   style,
   color,
   activity = false,
@@ -27,7 +27,7 @@ function BlueButton({
         styles.button,
         style,
         {
-          opacity: !disabled ? 1 : 0.3,
+          opacity: disabled || activity ? 0.3 : 1,
         },
       ]}
       disabled={disabled}

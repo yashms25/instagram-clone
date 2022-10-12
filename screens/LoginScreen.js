@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Image,
   Text,
-  TouchableHighlight,
   TouchableWithoutFeedback,
 } from "react-native";
 import BlueButton from "../components/BlueButton";
@@ -11,6 +10,7 @@ import textLogo from "../assets/logo/textLogo.png";
 import colors from "../colors";
 import BlueText from "../components/BlueText";
 import { h, w } from "../config/SizeConfig";
+import { useState } from "react";
 
 function LoginScreen({ navigation }) {
   return (

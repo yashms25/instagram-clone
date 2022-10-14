@@ -10,7 +10,6 @@ import colors from "../colors";
 const { screen_width, screen_height } = Dimensions.get("window");
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { h, w } from "../config/SizeConfig";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 
 function BlueButton({
   title,

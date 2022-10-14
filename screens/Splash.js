@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { ImageBackground, View, StyleSheet, Image, Text } from "react-native";
-import { CommonActions } from "@react-navigation/native";
+import { View, StyleSheet, Image, Text } from "react-native";
 
 import backgroundLogo from "../assets/logo/backgroundLogo.png";
 import metaInstagram from "../assets/logo/metaInstagram.png";
@@ -14,7 +13,7 @@ function Splash({ navigation }) {
   //   });
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace("LoginScreen");
+      navigation.replace("DateOfBirth");
     }, 1000);
   });
   return (

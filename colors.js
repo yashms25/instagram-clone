@@ -5,7 +5,7 @@ const colors = {
   grey: "grey",
   lighGrey: "#D8DCDF",
   textInputGrey: "#f9f9f9",
-  lightBlue: "#00ABF5",
+  lightBlue: "#ADD8F6",
   darkBlue: "#00376B",
 };
 

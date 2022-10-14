@@ -2,14 +2,16 @@ import { useEffect } from "react";
 
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 import colors from "./colors";
-import SignupScreen from "./screens/SignupScreen";
+import SignupScreen from "./screens/LoginScreens/SignupScreen";
 import Splash from "./screens/Splash";
 
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import LoginScreen from "./screens/LoginScreen";
-import SignupManualScreen from "./screens/SignupManualScreen";
-import OTPScreen from "./screens/OTPScreen";
+import LoginScreen from "./screens//LoginScreens/LoginScreen";
+import SignupManualScreen from "./screens//LoginScreens/SignupManualScreen";
+import OTPScreen from "./screens//LoginScreens/OTPScreen";
+import NamePasswordScreen from "./screens/LoginScreens/NamePasswordScreen";
+import DateOfBirth from "./screens/LoginScreens/DateOfBirth";
 const Stack = createStackNavigator();
 
 const Homestack = () => {
@@ -23,6 +25,8 @@ const Homestack = () => {
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="SignupManualScreen" component={SignupManualScreen} />
       <Stack.Screen name="OTPScreen" component={OTPScreen} />
+      <Stack.Screen name="NamePasswordScreen" component={NamePasswordScreen} />
+      <Stack.Screen name="DateOfBirth" component={DateOfBirth} />
     </Stack.Navigator>
   );
 };

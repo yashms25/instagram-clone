@@ -10,7 +10,7 @@ function CommonInput({
   style,
   value = "",
   onChangeText,
-  onBlur,
+  onBlur = () => {},
 }) {
   return (
     <View>

@@ -7,12 +7,12 @@ import {
   TouchableHighlight,
   TouchableWithoutFeedback,
 } from "react-native";
-import BlueButton from "../components/BlueButton";
-import textLogo from "../assets/logo/textLogo.png";
-import colors from "../colors";
-import BlueText from "../components/BlueText";
-import { h, w } from "../config/SizeConfig";
-import CommonInput from "../components/CommonInput";
+import BlueButton from "../../components/BlueButton";
+import textLogo from "../../assets/logo/textLogo.png";
+import colors from "../../colors";
+import BlueText from "../../components/BlueText";
+import { h, w } from "../../config/SizeConfig";
+import CommonInput from "../../components/CommonInput";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 function SignupScreen({ navigation }) {

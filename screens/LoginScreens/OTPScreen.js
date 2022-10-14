@@ -9,9 +9,9 @@ import {
 } from "react-native";
 const { screen_width, screen_height } = Dimensions.get("window");
 
-import colors from "../colors";
-import { h, w } from "../config/SizeConfig";
-import BlueButton from "../components/BlueButton";
+import colors from "../../colors";
+import { h, w } from "../../config/SizeConfig";
+import BlueButton from "../../components/BlueButton";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import {
   getAuth,
@@ -19,9 +19,9 @@ import {
   signInWithCredential,
 } from "firebase/auth";
 import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
-import FirebaseConfig from "../config/FirebaseConfig";
+import FirebaseConfig from "../../config/FirebaseConfig";
 
-import CustomModal from "../components/CustomModal";
+import CustomModal from "../../components/CustomModal";
 
 function OTPScreen({ navigation, route }) {
   const { verificationId, phone } = route.params;
@@ -55,6 +55,7 @@ function OTPScreen({ navigation, route }) {
         await signInWithCredential(auth, credential);
         console.log("done if");
         setActivity(false);
+        navigation.navigate("NamePasswordScreen");
       } else {
         setError(false);
         const credential = PhoneAuthProvider.credential(
@@ -64,6 +65,7 @@ function OTPScreen({ navigation, route }) {
         await signInWithCredential(auth, credential);
         console.log("done else");
         setActivity(false);
+        navigation.navigate("NamePasswordScreen");
       }
     } catch (err) {
       setActivity(false);
@@ -227,7 +229,7 @@ const styles = StyleSheet.create({
     marginBottom: h(15),
   },
   head: {
-    alignSelf: "center",
+    textAlign: "center",
     fontSize: 23,
   },
   line: {

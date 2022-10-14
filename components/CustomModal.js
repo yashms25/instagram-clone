@@ -5,10 +5,19 @@ import {
   Text,
   StyleSheet,
   TouchableWithoutFeedback,
+  TouchableHighlight,
 } from "react-native";
 import colors from "../colors";
 
-function CustomModal({ visible, onPress, title, subhead, buttonText }) {
+function CustomModal({
+  visible,
+  onPress,
+  title,
+  subhead,
+  buttonText,
+  buttonText2,
+  onPress2,
+}) {
   return (
     <Modal
       visible={visible}
@@ -30,11 +39,41 @@ function CustomModal({ visible, onPress, title, subhead, buttonText }) {
               width: "100%",
             }}
           ></View>
-          <TouchableWithoutFeedback onPress={onPress}>
+          <TouchableHighlight underlayColor={colors.lighGrey} onPress={onPress}>
             <View>
               <Text style={styles.buttonText}>{buttonText}</Text>
             </View>
-          </TouchableWithoutFeedback>
+          </TouchableHighlight>
+          {buttonText2 && (
+            <>
+              <View
+                style={{
+                  borderBottomColor: colors.lighGrey,
+                  borderBottomWidth: 1,
+                  width: "100%",
+                }}
+              ></View>
+              <TouchableHighlight
+                underlayColor={colors.lighGrey}
+                style={{
+                  borderBottomLeftRadius: 12,
+                  borderBottomRightRadius: 12,
+                }}
+                onPress={onPress2}
+              >
+                <View>
+                  <Text
+                    style={[
+                      styles.buttonText,
+                      { color: colors.black, fontWeight: "normal" },
+                    ]}
+                  >
+                    {buttonText2}
+                  </Text>
+                </View>
+              </TouchableHighlight>
+            </>
+          )}
         </View>
       </View>
     </Modal>
@@ -43,11 +82,11 @@ function CustomModal({ visible, onPress, title, subhead, buttonText }) {
 
 const styles = StyleSheet.create({
   buttonText: {
-    fontSize: 18,
-    color: colors.lightBlue,
+    fontSize: 16,
+    color: colors.primaryBlue,
     alignSelf: "center",
     fontWeight: "bold",
-    marginVertical: 10,
+    marginVertical: 15,
   },
   head: {
     fontWeight: "bold",
@@ -60,7 +99,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
   },
   innerView: {
     paddingVertical: 10,
@@ -72,6 +111,7 @@ const styles = StyleSheet.create({
     color: colors.grey,
     paddingHorizontal: 15,
     marginBottom: 20,
+    textAlign: "center",
   },
   outerView: {
     backgroundColor: colors.white,

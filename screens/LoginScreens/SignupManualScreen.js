@@ -8,18 +8,18 @@ import {
   TextInput,
   Dimensions,
 } from "react-native";
-import user from "../assets/icons/user.png";
-import { w, h } from "../config/SizeConfig";
+import user from "../../assets/icons/user.png";
+import { w, h } from "../../config/SizeConfig";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import colors from "../colors";
-import BlueButton from "../components/BlueButton";
+import colors from "../../colors";
+import BlueButton from "../../components/BlueButton";
 import { MaterialIcons } from "@expo/vector-icons";
 const { screen_width, screen_height } = Dimensions.get("window");
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { email, mobile_number } from "../config/Validation";
+import { email, mobile_number } from "../../config/Validation";
 import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
-import FirebaseConfig from "../config/FirebaseConfig";
+import FirebaseConfig from "../../config/FirebaseConfig";
 import { getAuth, PhoneAuthProvider } from "firebase/auth";
 
 const Tab = createMaterialTopTabNavigator();

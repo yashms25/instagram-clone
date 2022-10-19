@@ -13,7 +13,8 @@ function Splash({ navigation }) {
   //   });
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace("DateOfBirth");
+      // navigation.replace("LoginScreen");
+      navigation.replace("CreateUsername");
     }, 1000);
   });
   return (

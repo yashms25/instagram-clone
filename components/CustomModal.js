@@ -39,7 +39,14 @@ function CustomModal({
               width: "100%",
             }}
           ></View>
-          <TouchableHighlight underlayColor={colors.lighGrey} onPress={onPress}>
+          <TouchableHighlight
+            style={{
+              borderBottomLeftRadius: buttonText2 ? 0 : 12,
+              borderBottomRightRadius: buttonText2 ? 0 : 12,
+            }}
+            underlayColor={colors.lighGrey}
+            onPress={onPress}
+          >
             <View>
               <Text style={styles.buttonText}>{buttonText}</Text>
             </View>
@@ -93,6 +100,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginTop: 20,
     alignSelf: "center",
+    textAlign: "center",
   },
 
   modal: {
@@ -112,6 +120,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginBottom: 20,
     textAlign: "center",
+    justifyContent: "center",
   },
   outerView: {
     backgroundColor: colors.white,

@@ -41,6 +41,7 @@ function NamePasswordScreen({ navigation }) {
           value={name}
           autofocus={true}
           onChangeText={setName}
+          type={"name"}
         />
         {name && (
           <TouchableWithoutFeedback
@@ -58,6 +59,7 @@ function NamePasswordScreen({ navigation }) {
         )}
         <View>
           <CommonInput
+            type={"password"}
             securetextentry={true}
             placeholder={"Password"}
             onChangeText={setPssword}
@@ -127,7 +129,7 @@ function NamePasswordScreen({ navigation }) {
         style={{ marginTop: h(20) }}
         title={"Continue without syncing contacts"}
         onPress={() => {
-          console.log("hey");
+          navigation.navigate("DateOfBirth");
         }}
         disabled={name == "" || password == "" || password.length < 6}
       />

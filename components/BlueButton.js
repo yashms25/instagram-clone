@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     width: screen_width,
     padding: 10,
     marginHorizontal: "5%",
-    borderRadius: 6,
+    borderRadius: 8,
     height: h(45),
     justifyContent: "center",
     alignItems: "center",

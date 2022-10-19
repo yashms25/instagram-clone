@@ -11,6 +11,7 @@ function CommonInput({
   value = "",
   onChangeText,
   onBlur = () => {},
+  type,
 }) {
   return (
     <View>
@@ -23,6 +24,7 @@ function CommonInput({
         value={value}
         onChangeText={onChangeText}
         onBlur={onBlur ? onBlur : () => {}}
+        textContentType={type}
       />
     </View>
   );

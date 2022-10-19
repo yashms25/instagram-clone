@@ -12,6 +12,8 @@ import SignupManualScreen from "./screens//LoginScreens/SignupManualScreen";
 import OTPScreen from "./screens//LoginScreens/OTPScreen";
 import NamePasswordScreen from "./screens/LoginScreens/NamePasswordScreen";
 import DateOfBirth from "./screens/LoginScreens/DateOfBirth";
+import AgeScreen from "./screens/LoginScreens/AgeScreen";
+import CreateUsername from "./screens/LoginScreens/CreateUsername";
 const Stack = createStackNavigator();
 
 const Homestack = () => {
@@ -27,6 +29,8 @@ const Homestack = () => {
       <Stack.Screen name="OTPScreen" component={OTPScreen} />
       <Stack.Screen name="NamePasswordScreen" component={NamePasswordScreen} />
       <Stack.Screen name="DateOfBirth" component={DateOfBirth} />
+      <Stack.Screen name="AgeScreen" component={AgeScreen} />
+      <Stack.Screen name="CreateUsername" component={CreateUsername} />
     </Stack.Navigator>
   );
 };

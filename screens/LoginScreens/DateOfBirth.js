@@ -11,8 +11,10 @@ import birthdayIcon from "../../assets/icons/birthdayIcon.png";
 import { h } from "../../config/SizeConfig";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import BlueButton from "../../components/BlueButton";
+import CustomModal from "../../components/CustomModal";
+import BlueText from "../../components/BlueText";
 
-function DateOfBirth() {
+function DateOfBirth({ navigation }) {
   const months = [
     "January",
     "February",
@@ -27,6 +29,8 @@ function DateOfBirth() {
     "November",
     "December",
   ];
+  const [textView, setTextView] = useState(false);
+  const [textView2, setTextView2] = useState(false);
   const [year, setYear] = useState(-1);
   const [birthdate, setBirthDate] = useState(
     new Date().getDate().toString() +
@@ -36,6 +40,7 @@ function DateOfBirth() {
       new Date().getFullYear().toString()
   );
   const [dateModal, setDateModal] = useState(false);
+  const [modalView, setModalView] = useState(false);
   return (
     <View style={styles.container}>
       <Image style={styles.img} source={birthdayIcon} />
@@ -88,11 +93,51 @@ function DateOfBirth() {
           }}
         />
       )}
-      <BlueButton
-        title={"Next"}
+      <View style={{ position: "absolute", bottom: 30, width: "100%" }}>
+        <View
+          style={{
+            borderBottomColor: colors.lighGrey,
+            borderBottomWidth: 1,
+            marginBottom: 15,
+          }}
+        ></View>
+        <BlueButton
+          title={"Next"}
+          onPress={() => {
+            if (year < 5) {
+              setModalView(!modalView);
+            } else {
+              navigation.navigate("CreateUsername");
+            }
+          }}
+        />
+        {textView && (
+          <BlueText
+            style={{ marginTop: 20 }}
+            title={"Enter age instead"}
+            onPress={() => {
+              setTextView(false);
+              setTextView2(true);
+              navigation.navigate("AgeScreen");
+            }}
+          />
+        )}
+      </View>
+      <CustomModal
+        visible={modalView}
+        buttonText={"OK"}
         onPress={() => {
-          console.log(birthdate);
+          setModalView(!modalView);
+          if (!textView && textView2) {
+            navigation.navigate("AgeScreen");
+          } else {
+            setTextView(!textView);
+          }
         }}
+        title={"Enter your \n real birthday"}
+        subhead={
+          "Use your own birthday, even if this account is for a business, a pet or something else."
+        }
       />
     </View>
   );

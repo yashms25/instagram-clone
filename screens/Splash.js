@@ -13,8 +13,7 @@ function Splash({ navigation }) {
   //   });
   useEffect(() => {
     setTimeout(() => {
-      // navigation.replace("LoginScreen");
-      navigation.replace("CreateUsername");
+      navigation.replace("AddProfilePhoto");
     }, 1000);
   });
   return (
